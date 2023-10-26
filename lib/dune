@@ -1,0 +1,3 @@
+(library
+ (name wol)
+ (libraries eio_main ipaddr str))

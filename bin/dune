@@ -1,0 +1,5 @@
+(executable
+ (name owol)
+ (public_name owol)
+ (modules owol)
+ (libraries wol))
