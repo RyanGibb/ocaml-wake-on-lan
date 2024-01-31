@@ -1,0 +1,4 @@
+(library
+ (name wol)
+ (public_name wol)
+ (libraries ipaddr macaddr cstruct))

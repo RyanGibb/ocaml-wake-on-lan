@@ -1,7 +1,7 @@
 
 let send_wol mac port broadcast =
   Eio_posix.run @@ fun env ->
-  Wol.send ~net:env#net ~port ~broadcast mac
+  Wol_eio.send ~net:env#net ~port ~broadcast mac
 
 let () =
   let open Cmdliner in

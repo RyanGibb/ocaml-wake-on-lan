@@ -19,7 +19,23 @@
  (name wol)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune eio_main ipaddr)
+ (depends ipaddr)
+ (tags
+  (topics "to describe" your project)))
+
+(package
+ (name wol-mirage)
+ (synopsis "A short synopsis")
+ (description "A longer description")
+ (depends wol tcpip)
+ (tags
+  (topics "to describe" your project)))
+
+(package
+ (name wol-eio)
+ (synopsis "A short synopsis")
+ (description "A longer description")
+ (depends wol eio eio_main)
  (tags
   (topics "to describe" your project)))
 
