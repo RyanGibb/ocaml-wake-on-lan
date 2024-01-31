@@ -1,0 +1,4 @@
+(library
+ (name wol_mirage)
+ (public_name wol-mirage)
+ (libraries wol tcpip))

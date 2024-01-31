@@ -1,7 +1,5 @@
-
 let send_wol mac port broadcast =
-  Eio_posix.run @@ fun env ->
-  Wol.send ~net:env#net ~port ~broadcast mac
+  Eio_posix.run @@ fun env -> Wol_eio.send ~net:env#net ~port ~broadcast mac
 
 let () =
   let open Cmdliner in
@@ -11,11 +9,16 @@ let () =
   in
   let port =
     let doc = "Port to send the packet too (default 9)." in
-    Arg.(value & opt int 9 & info ["p"; "port"] ~docv:"PORT" ~doc)
+    Arg.(value & opt int 9 & info [ "p"; "port" ] ~docv:"PORT" ~doc)
   in
   let broadcast =
-    let doc = "Address to send the packet too (default broadcast to 255.255.255.255)." in
-    Arg.(value & opt string "255.255.255.255" & info ["a"; "address"] ~docv:"ADDRESS" ~doc)
+    let doc =
+      "Address to send the packet too (default broadcast to 255.255.255.255)."
+    in
+    Arg.(
+      value
+      & opt string "255.255.255.255"
+      & info [ "a"; "address" ] ~docv:"ADDRESS" ~doc)
   in
   let cmd =
     let term = Term.(const send_wol $ mac_address $ port $ broadcast) in

@@ -1,5 +1,6 @@
 (executable
  (name owol)
  (public_name owol)
+ (package wol-eio)
  (modules owol)
- (libraries wol cmdliner))
+ (libraries eio_main wol_eio cmdliner))

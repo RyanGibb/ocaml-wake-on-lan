@@ -11,7 +11,9 @@ doc: "https://url/to/documentation"
 bug-reports: "https://github.com/username/reponame/issues"
 depends: [
   "dune" {>= "3.10"}
-  "ipaddr"
+  "wol"
+  "eio"
+  "eio_main"
   "odoc" {with-doc}
 ]
 build: [
