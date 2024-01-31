@@ -1,4 +1,4 @@
-let send ~net ?(port=9) ?(broadcast="255.255.255.255") mac_str =
+let send ~net ?(port = 9) ?(broadcast = "255.255.255.255") mac_str =
   Eio.Switch.run @@ fun sw ->
   let addr =
     Ipaddr.V4.of_string_exn broadcast
