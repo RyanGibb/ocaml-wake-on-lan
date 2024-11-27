@@ -10,5 +10,5 @@ let send ~net ?(port = 9) ?(broadcast = "255.255.255.255") mac_str =
     in
     Eio.Net.datagram_socket ~sw net proto
   in
-  let packet = Wol.magic_packet (Macaddr.of_string_exn mac_str) in
+  let packet = Wol.magic_packet mac_str in
   Eio.Net.send sock ~dst:(`Udp (addr, port)) [ packet ]

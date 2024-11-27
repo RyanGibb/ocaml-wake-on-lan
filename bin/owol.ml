@@ -1,4 +1,5 @@
 let send_wol mac port broadcast =
+  let mac = Macaddr.of_string_exn mac in
   Eio_posix.run @@ fun env -> Wol_eio.send ~net:env#net ~port ~broadcast mac
 
 let () =
