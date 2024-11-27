@@ -1,4 +1,4 @@
 (library
  (name wol_eio)
  (public_name wol-eio)
- (libraries eio wol))
+ (libraries eio eio.unix wol))
