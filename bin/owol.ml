@@ -31,7 +31,7 @@ let () =
       "Whether to set the SO_BROADCAST socket option to enable broadcasting \
        (default true)."
     in
-    Arg.(value & opt bool true & info [ "a"; "address" ] ~docv:"ADDRESS" ~doc)
+    Arg.(value & opt bool true & info [ "b"; "broadcast" ] ~docv:"ADDRESS" ~doc)
   in
   let cmd =
     let term =
